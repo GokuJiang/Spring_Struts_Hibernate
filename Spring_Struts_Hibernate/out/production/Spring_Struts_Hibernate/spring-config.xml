@@ -34,7 +34,7 @@
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/poet_db?characterEncoding=utf8</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/poet_db?useUnicode=true&amp;characterEncoding=utf8</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
                 <prop key="hibernate.connection.username">root</prop>
                 <prop key="hibernate.connection.password"></prop>
@@ -58,8 +58,6 @@
             <ref bean="sessionFactory"></ref>
         </property>
     </bean>
-
-
 
 
     <bean id="poetdao" class="ym.dao.PoetDAOImpl">

@@ -6,8 +6,10 @@
 
 <struts>
         <package name="default" extends="struts-default">
-            <action name="searchAction" class="productActionBeen">
-                <result name="success">index.jsp</result>
+            <action name="searchAction" class="poetActionBean">
+                <result name="title">index.jsp</result>
+                <result name="name"></result>
+                <result name="content"></result>
             </action>
             
             

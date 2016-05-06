@@ -34,10 +34,7 @@ public class PoetDAOImpl implements PoetDAO {
     @Override
     public List<PoetsModel> getPoetByName(String name) {
 
-        byte[] bytes = name.getBytes(Charset.forName("UTF-8"));
-
         Session session = null;
-        Transaction tx = null;
         try{
             session = getSession();
             String hql = "select p from PoetsModel as p where p.name=?";
@@ -49,9 +46,6 @@ public class PoetDAOImpl implements PoetDAO {
             return poetsModels;
         }
         catch (Exception e){
-            if (tx!=null){
-                tx.rollback();
-            }
             e.printStackTrace();
             return null;
         }
@@ -59,12 +53,42 @@ public class PoetDAOImpl implements PoetDAO {
 
     @Override
     public List<PoetriesModel> getPoetriesByTitle(String title) {
-        return null;
+
+        Session session = null;
+        try{
+            session = getSession();
+            String hql = "select p from PoetriesModel as p where p.title=?";
+            Query query = session.createQuery(hql);
+            query.setString(0,title);
+            System.out.println(query.list() == null);
+            List<PoetriesModel> poetriesModels = (List<PoetriesModel>) query.list();
+
+            return poetriesModels;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public List<PoetriesModel> getPoetriesByContent(String content) {
-        return null;
+
+        Session session = null;
+        try{
+            session = getSession();
+            String hql = "select p from PoetsModel as p where   p.name like :param";
+            Query query = session.createQuery(hql);
+            query.setString("param","%"+content+"%");
+            System.out.println(query.list() == null);
+            List<PoetriesModel> poetriesModels = (List<PoetriesModel>) query.list();
+
+            return poetriesModels;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public SessionFactory getSessionFactory() {
@@ -75,3 +99,4 @@ public class PoetDAOImpl implements PoetDAO {
         this.sessionFactory = sessionFactory;
     }
 }
+

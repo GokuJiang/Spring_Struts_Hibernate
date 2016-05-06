@@ -1,6 +1,7 @@
 package ym.service;
 
 import ym.dao.PoetDAO;
+import ym.model.PoetriesModel;
 import ym.model.PoetsModel;
 
 import java.util.List;
@@ -19,6 +20,17 @@ public class PoetServiceImp implements PoetService {
     @Override
     public List<PoetsModel> getPoet(String name) {
         return poetDAO.getPoetByName(name);
+    }
+
+
+    @Override
+    public List<PoetriesModel> getPoetriesByContent(String content) {
+        return poetDAO.getPoetriesByContent(content);
+    }
+
+    @Override
+    public List<PoetriesModel> getPoetriesByTitle(String title) {
+        return poetDAO.getPoetriesByTitle(title);
     }
 
     public PoetDAO getPoetDAO() {
