@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - poet_db@localhost" uuid="3c024ce8-1451-43e7-8488-aa1f370d14df">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>poet_db.*</schema-pattern>
+      <default-schemas>poet_db.*</default-schemas>
+    </data-source>
+    <data-source name="sessionFactory/Hibernate" uuid="883ea67c-6546-4cd5-8475-b44b8b454fe1">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfc0dfcedfc8dfc9df90dfc7dfd3dfd9dfdbdfc6df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df99df99df9adf9cdf85dfdadfc5dfcfdfdedff5dfcedfc8df95dfdfdfd9dfcfdfffdfc4dfc3dfc9dfc5dfcedfcfdf97dfdedfd8dfdfdfcfdf8cdfc9dfc2dfcbdfd8dfcbdfc9dfdedfcfdfd8dfefdfc4dfc9dfc5dfcedfc3dfc4dfcddf97dfdfdfdedfccdf92</user-password>
+    </data-source>
+  </component>
+</project>
